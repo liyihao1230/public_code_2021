@@ -1,0 +1,33 @@
+{
+    "code":200,
+    "data":[
+        {
+            "img":"xxxx",
+            # "pro_class":"xxx",
+            "list":[
+                {
+                    "m_product_id":"1448921",
+                    "score":0.974706768989563
+                },
+                {
+                    "m_product_id":"1448921",
+                    "score":0.974706768989563
+                }
+            ]
+        },
+        {
+            "img":"xxxx",
+            # "pro_class":"xxx",
+            "list":[
+                {
+                    "m_product_id":"1448921",
+                    "score":0.974706768989563
+                },
+                {
+                    "m_product_id":"1448921",
+                    "score":0.974706768989563
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+#!/bin/bash
+
+# shellcheck disable=SC1090
+source ~/.bashrc
+
+export HADOOP_USER_NAME=admin
+export SPARK_HOME=/opt/spark-2.4.7-bin-hadoop2.7
+export ARROW_PRE_0_15_IPC_FORMAT=1
+
+# rec new pros by cv sim
+/root/anaconda3/envs/rec/bin/python3.7 -u /root/code/RecSys-2.0-rank_dev/n_load4sizeclassify.py
+wait
+/root/anaconda3/envs/rec/bin/python3.7 -u /root/code/RecSys-2.0-rank_dev/s_size_lgbm.py JNBY
+wait
+/root/anaconda3/envs/rec/bin/python3.7 -u /root/code/RecSys-2.0-rank_dev/s_size_lgbm.py LESS
+wait
+/root/anaconda3/envs/rec/bin/python3.7 -u /root/code/RecSys-2.0-rank_dev/s_size_lgbm.py CROQUIS
+wait
+/root/anaconda3/envs/rec/bin/python3.7 -u /root/code/RecSys-2.0-rank_dev/s_size_lgbm.py tjnby
+wait
+/root/anaconda3/envs/rec/bin/python3.7 -u /root/code/RecSys-2.0-rank_dev/s_size_test.py JNBY
+wait
+/root/anaconda3/envs/rec/bin/python3.7 -u /root/code/RecSys-2.0-rank_dev/s_size_test.py LESS
+wait
+/root/anaconda3/envs/rec/bin/python3.7 -u /root/code/RecSys-2.0-rank_dev/s_size_test.py CROQUIS
+wait
+/root/anaconda3/envs/rec/bin/python3.7 -u /root/code/RecSys-2.0-rank_dev/s_size_test.py tjnby
